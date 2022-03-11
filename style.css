@@ -1,7 +1,7 @@
-:root {
+  :root {
     scroll-behavior: smooth;
-}
-body {
+  }
+  body {
     font-family: 'Roboto', sans-serif;
     color: #423f3f;
     margin: 0;
@@ -11,14 +11,15 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
+    color: rgb(116, 116, 116);
     background-color: white;
-    box-shadow: 0 1px 1px 1px darkgrey;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
     z-index: 2;
   }
   #header-left {
     display: inline-flex;
     float: left;
-    margin: 1em 5%;
+    margin: 0 5%;
   }
   #header-img {
     margin: auto 0.5em;
@@ -29,7 +30,7 @@ body {
   #nav-bar {
     list-style-type: none;
     float: right;
-    margin-right:5%;
+    margin:0 5% 0 0;
   }
   #nav-bar li {
     display: inline-flex;
@@ -38,6 +39,9 @@ body {
   .nav-link {
     text-decoration: none;
     color: inherit;
+  }
+  .nav-link:hover {
+    color: rgb(38, 114, 255);
   }
   main {
     clear: both;
@@ -62,14 +66,14 @@ body {
     height: 50%;
     padding: 0 1.5em;
     font-size: 4em;
-    font-weight: bold;
+    font-weight: 900;
     font-family: 'Inter', sans-serif;
     text-align: center;
     align-self: center;
     color: #485861;
     flex-shrink: 2;
   }
-  #overview-video iframe{
+  #video{
     display: block;
     width: 60vw;
     height: 33.75vw;
@@ -101,9 +105,19 @@ body {
     color: #383f6e;
     flex-shrink: 2;
   }
-
+  #features {
+    padding: 0;
+    height: 500px
+  }
+  #features-img {
+    position: relative;
+    
+    bottom: -5px;
+    width: 30%;
+  }
   #pricing {
-    margin: 3em 0;
+    position: relative;
+    margin: 0;
     padding: 4em 5%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -135,6 +149,27 @@ body {
     opacity: 0.5;
     margin: 10px 0 20px 0;
   }
+  .model:hover {
+    box-shadow: 0 0 2px 2px #f8dbd9;
+  }
+  .buy {
+    width: fit-content;
+    font-size: 1em;
+    font-family: 'Inter';
+    font-weight: bold;
+    padding: 0.2em 0.5em;
+    margin: 1em auto;
+    color: rgb(38, 114, 255);
+    background-color: white;
+    border: 2px solid rgb(38, 114, 255);
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  .buy:hover {
+    animation-name: button-color;
+    animation-fill-mode: forwards;
+    animation-duration: 200ms;
+  }
   #model-img1 {
     width: 50%;
     opacity: 1;
@@ -154,4 +189,118 @@ body {
     width: 75%;
     opacity: 1;
     margin: 10% 0 7% 0;
+  }
+  #email-sub {
+    margin: 2em;
+  }
+  #email-sub img {
+    display: block;
+    margin: 1em auto;
+  }
+  #email-sub p {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+  }
+  #form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    margin: 1em auto;
+  }
+  #email {
+    padding: 0.5em;
+    width: 400px;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid rgb(5, 93, 255);
+    margin: 0 auto;
+    font-size: 1em;
+    font-family: 'Inter';
+  }
+  #email:focus {
+    animation-name: email-scale;
+    animation-fill-mode: forwards;
+    animation-duration: 500ms;
+  }
+  #submit {
+    width: fit-content;
+    font-size: 1em;
+    font-family: 'Inter';
+    font-weight: bold;
+    padding: 0.2em 0.5em;
+    margin: 0 auto;
+    color: rgb(38, 114, 255);
+    background-color: white;
+    border: 2px solid rgb(38, 114, 255);
+    border-radius: 5px;
+  }
+  #submit:hover {
+    animation-name: button-color;
+    animation-fill-mode: forwards;
+    animation-duration: 200ms;
+  }
+
+  @keyframes email-scale {
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  @keyframes button-color {
+    100% {
+      color: white;
+      background-color:rgb(38, 114, 255);
+    }
+  }
+
+  @media (max-width: 500px) {
+    #header {
+      display: block;
+    }
+    #header-left {
+      display: block;
+      float: none;
+      width: fit-content;
+      margin: 0 auto;
+      
+    }
+    #header-img {
+      display: block;
+      transform: scale(0.8);
+      margin: 0.3em auto 0 auto;
+    }
+    #header-left h1 {
+      margin: 0;
+    }
+    
+    #nav-bar {
+      float: none;
+      clear: both;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #nav-bar li {
+      margin: 1em 32px;
+    }
+    #overview {
+      flex-direction: column;
+      padding-top: 150px;
+    }
+
+    #video {
+      width: 100vw;
+      height: 56.25vw;
+      margin: 1em auto;
+    }
+    #colors {
+      flex-direction: column-reverse;
+    }
+    #colors p {
+      padding: 50px;
+    }
+
+    #pricing {
+      grid-template-columns: 1fr;
+    }
   }
